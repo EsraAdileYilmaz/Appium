@@ -37,6 +37,7 @@ public class KiwiApp {
 
         //1- uygulamanin yuklendigi dogrulanir
         Assert.assertTrue(driver.isAppInstalled("com.skypicker.main"));
+        //"com.skypicker.main" appPackage'i bu olan uygulama yuklendimi?
 
         //2- uygulamanin basariyla acildigi dogrulanir
         Assert.assertTrue(page.misafirButonu.isDisplayed());//page objesinden gelen misafirButonu gorunuyor mu?

@@ -26,7 +26,7 @@ public class AllCurrencyConverterApp {
 
 
         //1- all currency uygulamasinin yuklendigi dogulanir
-        Assert.assertTrue(driver.isAppInstalled("com.smartwho.SmartAllCurrencyConverter"));
+        Assert.assertTrue(driver.isAppInstalled("com.smartwho.SmartAllCurrencyConverter"));//appPackage'ye sahip uygulama yuklendi mi?
 
         //2- uygulamanin acildigi dogrulanir
         Assert.assertTrue(allCurrencyAppPage.currentText.isDisplayed());
@@ -50,19 +50,31 @@ public class AllCurrencyConverterApp {
            allCurrencyAppPage.zeroButton.click();
         }//1000 yazdirdik.1000 zloty'i tl ye cevirdik
 
+        /*
+        ReusableMethods.scrollWithUiScrollable("1");
+        ReusableMethods.scrollWithUiScrollable("5");
+        ReusableMethods.scrollWithUiScrollable("3");
+        ReusableMethods.scrollWithUiScrollable("8");//1538
+        */
+
+
         //5- cevrilen tutar screenShot olarak kaydedilir
-        File paraSonucu =driver.getScreenshotAs(OutputType.FILE);//cevirdigimiz para sonucu file'in icine screenShot olarak kaydoldu
-        FileUtils.copyFile(paraSonucu,new File("zlotyToTry.jpg"));
+       // File paraSonucu =driver.getScreenshotAs(OutputType.FILE);//cevirdigimiz para sonucu file'in icine screenShot olarak kaydoldu
+        //FileUtils.copyFile(paraSonucu,new File("ExchangeZlotyToTry.jpg"));//burda kopyasini olusturduk
         //cekilen ss'in kopya bir file'ini olusturduk.Screen shot olusturup dosya yolu ile projenin icine attik.
         //Ancak uzantisinin .jpg olmasi ZORUNLUDUR.
-        // File'in icine kaydolan degerler FileUtils'den alinir.
+        // File'in icine kaydolan degerler FileUtils'den alinir.FileUtils tum file dosyalarini icinde barindirir
 
+        ReusableMethods.getScreenshot("Exchange");
 
         //6- Ardindan zloty nin tl karsiligi olan tl degeri kaydedilir
-        String cevrilenParaSonucu=allCurrencyAppPage.resultBox.getText();
-
+         String cevrilenParaSonucu=allCurrencyAppPage.resultBox.getText();
+        /*
+        AndroidElement exchangeResult= driver.findElementById("com.smartwho.SmartAllCurrencyConverter:id/EditTextCurrencyB");
+        String sonucText=exchangeResult.getText();
+         */
         //7- kullaniciya sms olarak bildirilir
-        driver.sendSMS("55555555555","Suan icin cevirisini yaptiginiz kur sonucu: "+cevrilenParaSonucu);
+          driver.sendSMS("55555555555","Suan icin cevirisini yaptiginiz kur sonucu: "+cevrilenParaSonucu);//sadece sanal cihazlarda calisir
 
 
 
@@ -70,8 +82,7 @@ public class AllCurrencyConverterApp {
 
     }
 }
-    git add README.md
-        git commit -m "first commit"
-        git branch -M main
-        git remote add origin git@github.com:EsraAdileYilmaz/Appium.git
-        git push -u origin main
+    
+
+
+
