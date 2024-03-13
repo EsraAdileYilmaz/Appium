@@ -68,7 +68,7 @@ public class KiwiPage {
     @FindBy(xpath = "//*[@text='Nonstop']")
     public WebElement nonstopButton;
 
-    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[22]")
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[12]")
     public WebElement sonucFiyatElementi;
 
     /* Hocanin locate'i

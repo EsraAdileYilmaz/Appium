@@ -68,6 +68,7 @@ public class AllCurrencyConverterApp {
         // File'in icine kaydolan degerler FileUtils'den alinir.FileUtils tum file dosyalarini icinde barindirir
 
         ReusableMethods.getScreenshot("Exchange");//Screen Shot almanin 2.yolu
+       // driver.startRecordingScreen();//buda video'ya almak icin kullanilabilir.
 
         //6- Ardindan zloty nin tl karsiligi olan tl degeri kaydedilir
          String cevrilenParaSonucu=allCurrencyAppPage.resultBox.getText();

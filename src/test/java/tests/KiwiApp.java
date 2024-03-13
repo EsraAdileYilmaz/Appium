@@ -32,6 +32,7 @@ public class KiwiApp {
 
     @Test
     public void kiwiAppTest() throws InterruptedException {
+
         //kiwi'nin=>appPackage","com.skypicker.main"
         //"appActivity","com.kiwi.android.feature.splash.impl.ui.SplashActivity"
 
